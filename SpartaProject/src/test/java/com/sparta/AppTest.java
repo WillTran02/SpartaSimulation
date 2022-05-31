@@ -1,7 +1,6 @@
 package com.sparta;
 
 
-public class AppTest 
-{
+public class AppTest {
 
 }
