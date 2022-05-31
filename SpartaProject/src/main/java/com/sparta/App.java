@@ -31,9 +31,10 @@ public class App {
             if (centre.isFull) fullCentres++;
 //            System.out.println(centre.getCurrentCapacity());
         }
+        totalTrainees = totalTrainees - waitingList;
         System.out.println("Total centres opened: " + totalCentres);
         System.out.println("Total centres at full capacity: " + fullCentres);
-        System.out.println("Total number of trainees: " + totalTrainees);
+        System.out.println("Total number of trainees in training: " + totalTrainees);
         System.out.println("Total on the waiting list: " + waitingList);
     }
 }
