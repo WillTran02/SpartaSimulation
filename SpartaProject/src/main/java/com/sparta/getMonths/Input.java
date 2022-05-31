@@ -2,18 +2,18 @@ package com.sparta.getMonths;
 
 import java.util.Scanner;
 
-public class getMonths {
+public class Input {
 
-    public static void main(String args[]) {
+    public static int getMonths() {
 
         Scanner console = new Scanner(System.in);
         String input;
-        int months;
+        int months = 0;
         boolean isValid;
 
         do {
             isValid = true; // reset the validity
-            System.out.println("Please enter the months of months you would like to run the simulation for: ");
+            System.out.println("Please enter the number of months you would like to run the simulation for: ");
             input = console.nextLine();
 
 
@@ -25,9 +25,11 @@ public class getMonths {
                 }
             } catch (NumberFormatException e) {
                 isValid = false;
-                System.out.println("You have not entered a months, please try again: ");
+                System.out.println("You have not entered a number, please try again: ");
             }
 
         } while (!isValid);
+
+        return months;
     }
 }
