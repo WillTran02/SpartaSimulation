@@ -1,10 +1,6 @@
 package com.sparta.getMonths;
 
-package com.sparta.lh;
-
 import java.util.Scanner;
-
-
 
 public class getMonths {
 
