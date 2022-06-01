@@ -5,7 +5,6 @@ public class Centre {
     public int currentCapacity = 0;
     public boolean isFull = false;
 
-
     public int getMaxCapacity() {
         return maxCapacity;
     }
@@ -14,4 +13,16 @@ public class Centre {
         return currentCapacity;
     }
 
-}
+
+
+    public void setCurrentCapacity(int currentCapacity){
+        if (currentCapacity <= 100){
+            this.currentCapacity = currentCapacity;
+            if (currentCapacity == 100){
+                this.isFull = true;
+            }
+        }
+    }
+    }
+
+
