@@ -33,6 +33,11 @@ public class App {
                 //End Summary
                 printEndSummary(months);
             }
+            String repeatOption = Input.quitOption();
+            if (repeatOption.equalsIgnoreCase("N")) {
+                System.out.println("Thank you for using our simulation program.");
+                break;
+            }
         } while (true);
     }
 

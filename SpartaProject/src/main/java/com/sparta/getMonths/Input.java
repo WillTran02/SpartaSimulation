@@ -50,5 +50,23 @@ public class Input {
         } while (!isValid);
 
         return input;
+
+    }    public static String quitOption() {
+
+        Scanner console = new Scanner(System.in);
+        String input;
+        boolean isValid;
+
+        do {
+            isValid = false;
+            System.out.println("Would you like to repeat the simulation? [Y]es or [N]o");
+            input = console.nextLine();
+            if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")) {
+                break;
+            }
+            System.out.println("Please enter \"Y\", or \"N\".");
+        } while (!isValid);
+
+        return input;
     }
 }
