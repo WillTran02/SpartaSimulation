@@ -13,7 +13,7 @@ The current version of the program generates a random number of trainees every m
 
 - Navigate to SpartaProject/src/main/java/com/sparta/
 - Run the App.java file
-- The program should ask you to enter a number of months. Please enter a number greater than or equal to 12 (1 year).
+- The program should ask you to enter a number of months. Please enter a number greater than or equal to 12 (1 year). Please be careful when entering values over 10_000, as the program will take longer to run and may become unresponsive.
 - The program should ask you to enter an option to choose how you wish the report to be displayed. Please enter "A" for a month-to-month report, or "B" for a summary at the end of the simulation (case insensitive).
 - The program will run the simulation and deliver your report for that session to the screen.
 - At this point, the program will ask if you would like to run a new simulation or not. Please enter "Y" for yes, or "N" for no, which terminates the program (case insensitive).
