@@ -40,13 +40,13 @@ public class Input {
         boolean isValid;
 
         do {
-            isValid = true; // reset the validity
+            isValid = false; // reset the validity
             System.out.println("Would you like to see [A] monthly reports, or a [B] summary at the end?");
             input = console.nextLine();
-            if (!(input.equalsIgnoreCase("A")) || !(input.equalsIgnoreCase("B"))) {
-                isValid = false;
-                System.out.println("Please enter \"A\", or \"B\".");
+            if ((input.equalsIgnoreCase("A")) || (input.equalsIgnoreCase("B"))) {
+                break;
             }
+            System.out.println("Please enter \"A\", or \"B\".");
         } while (!isValid);
 
         return input;
