@@ -11,7 +11,7 @@ The current version of the program generates a random number of trainees every m
 
 # How to use the program
 
-- Navigate to SpartaProject/src/main/java/com/sparta/App.java
+- Navigate to SpartaProject/src/main/java/com/sparta/
 - Run the App.java file
 - The program should ask you to enter a number of months. Please enter a number greater than 12 (1 year).
 - The program should ask you to enter an option to choose how you wish the report to be displayed. Please enter "A" or "B" (case insensitive).
