@@ -15,26 +15,38 @@ public class App {
     public static int waitingList = 0; //incremented after centres perform their intakes,
     // decremented first before totalTrainees
     public static void main(String[] args) {
-        int months = Input.getMonths();
-        totalCentres = genCentres.generatecenter(months);
-        ArrayList<Centre> centreList = new ArrayList<>();
-        for (int i = 1; i <= months; i++) {
-            int traineesThisMonth = genTrainees.generateTrainees(1);
-            totalTrainees += traineesThisMonth;
-            waitingList += traineesThisMonth;
-            if (i != 0 && i % 2 == 0) {
-                centreList.add(new Centre());
+        do {
+            totalCentres = 0;
+            fullCentres = 0;
+            totalTrainees = 0;
+            waitingList = 0;
+            int months = Input.getMonths();
+            String reporting = Input.reportOption();
+            totalCentres = genCentres.generatecenter(months);
+            ArrayList<Centre> centreList = new ArrayList<>();
+            for (int i = 1; i <= months; i++) {
+                int traineesThisMonth = genTrainees.generateTrainees(1);
+                totalTrainees += traineesThisMonth;
+                waitingList += traineesThisMonth;
+                if (i != 0 && i % 2 == 0) {
+                    centreList.add(new Centre());
+                }
+                centreList = Manager.increaseCurrentCapacityFromWaitingList(centreList, waitingList);
+                if (reporting.equalsIgnoreCase("A")) {
+                    // ??? ASK ABOUT WHAT TO REPORT ???
+                }
             }
-            centreList = Manager.increaseCurrentCapacityFromWaitingList(centreList, waitingList);
-        }
-        for (Centre centre : centreList) {
-            if (centre.isFull) fullCentres++;
+            for (Centre centre : centreList) {
+                if (centre.isFull) fullCentres++;
 //            System.out.println(centre.getCurrentCapacity());
-        }
-        totalTrainees = totalTrainees - waitingList;
-        System.out.println("Total centres opened: " + totalCentres);
-        System.out.println("Total centres at full capacity: " + fullCentres);
-        System.out.println("Total number of trainees in training: " + totalTrainees);
-        System.out.println("Total on the waiting list: " + waitingList);
+            }
+            if (reporting.equalsIgnoreCase("B")) {
+                totalTrainees = totalTrainees - waitingList;
+                System.out.println("Total centres opened: " + totalCentres);
+                System.out.println("Total centres at full capacity: " + fullCentres);
+                System.out.println("Total number of trainees in training: " + totalTrainees);
+                System.out.println("Total on the waiting list: " + waitingList);
+            }
+        } while (true);
     }
 }

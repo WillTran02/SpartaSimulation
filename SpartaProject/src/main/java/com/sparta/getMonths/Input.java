@@ -32,4 +32,23 @@ public class Input {
 
         return months;
     }
+
+    public static String reportOption() {
+
+        Scanner console = new Scanner(System.in);
+        String input;
+        boolean isValid;
+
+        do {
+            isValid = true; // reset the validity
+            System.out.println("Would you like to see [A] monthly reports, or a [B] summary at the end?");
+            input = console.nextLine();
+            if (!(input.equalsIgnoreCase("A")) || !(input.equalsIgnoreCase("B"))) {
+                isValid = false;
+                System.out.println("Please enter \"A\", or \"B\".");
+            }
+        } while (!isValid);
+
+        return input;
+    }
 }
